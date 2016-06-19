@@ -1,0 +1,9 @@
+﻿<local:ChampGenerique 
+    x:Class="ComposantReferentiel.Champ.ChampDateTime" 
+    x:Name="Root" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+   xmlns:local="clr-namespace:ComposantReferentielV2.Champ">
+    <StackPanel DataContext="{Binding ElementName=Root, Path=DataContext}">
+        <DatePicker Name="datetime" />
+    </StackPanel>
+</local:ChampGenerique>

@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9244526-944F-40EA-8426-68477A97BC64}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ComposantRefentielV2</RootNamespace>
+    <AssemblyName>ComposantRefentielV2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ComposantRefentiel.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\ComposantRefentiel.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\ComposantReferentiel\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\IBLLReferentiel.cs" />
+    <Compile Include="Champ\ChampBoolean.xaml.cs">
+      <DependentUpon>ChampBoolean.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Champ\ChampDateTime.xaml.cs">
+      <DependentUpon>ChampDateTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Champ\ChampDecimal.xaml.cs">
+      <DependentUpon>ChampDecimal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Champ\ChampGenerique.cs" />
+    <Compile Include="Champ\ChampImage.xaml.cs">
+      <DependentUpon>ChampImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Champ\ChampList.xaml.cs">
+      <DependentUpon>ChampList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Champ\ChampNumerique.xaml.cs">
+      <DependentUpon>ChampNumerique.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Champ\Champs.cs" />
+    <Compile Include="Champ\ChampTexte.xaml.cs">
+      <DependentUpon>ChampTexte.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Champ\ChampVM\ChampImageVM.cs" />
+    <Compile Include="ControlChamps.xaml.cs">
+      <DependentUpon>ControlChamps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\ConverterBoolean.cs" />
+    <Compile Include="Converter\ConverterDate.cs" />
+    <Compile Include="Converter\ConverterDecimal.cs" />
+    <Compile Include="Converter\ConverterImage.cs" />
+    <Compile Include="Converter\ConverterModeBooleanReferentiel.cs" />
+    <Compile Include="Converter\ConverterModeTitleReferentiel.cs" />
+    <Compile Include="IComposantModification.cs" />
+    <Compile Include="ParamExportCSV.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RapportErreur\BuilderRapportOracleException.cs" />
+    <Compile Include="RapportErreur\BuilderRapportValidation.cs" />
+    <Compile Include="RapportErreur\Erreur.cs" />
+    <Compile Include="RapportErreur\Rapport.cs" />
+    <Compile Include="RapportErreur\RapportErreurView.xaml.cs">
+      <DependentUpon>RapportErreurView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RapportErreur\RapportErreurViewVM.cs" />
+    <Compile Include="ReferentielControl.xaml.cs">
+      <DependentUpon>ReferentielControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ControlsChampsVM.cs" />
+    <Compile Include="ViewModel\ReferentielControlVM.cs" />
+    <Compile Include="ValidationRule\DecimalValidationRule.cs" />
+    <Compile Include="ValidationRule\NumericValidationRule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Champ\ChampBoolean.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Champ\ChampDateTime.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Champ\ChampDecimal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Champ\ChampImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Champ\ChampList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Champ\ChampNumerique.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Champ\ChampTexte.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ControlChamps.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RapportErreur\RapportErreurView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReferentielControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cc-acroread-128x128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cc-button_cancel-128x128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cc-button_ok-128x128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cc-csv-128x128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cc-edit-128x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cc-edit_add-128x128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cc-edit_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cc-edit_remove-128x128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cc-edit_remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Close.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MessageBox\MessageBox.csproj">
+      <Project>{ce8a9248-06bd-44a0-80ad-850da5b6a567}</Project>
+      <Name>MessageBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReadAndWrite\ReadAndWrite.csproj">
+      <Project>{de4e3330-eae7-4dcb-b6fe-a69d2443197c}</Project>
+      <Name>ReadAndWrite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServicesView\GeneralServices.csproj">
+      <Project>{b6a1dbff-4001-47d8-8a7c-9bebca85da17}</Project>
+      <Name>GeneralServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{d0b8eb7a-7658-4244-848d-261159beb110}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1442866147_import.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
