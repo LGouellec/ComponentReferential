@@ -1,5 +1,4 @@
-﻿using Services;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Windows.Controls;
 
 namespace ComposantReferentiel.ValidationRule
@@ -46,7 +45,9 @@ namespace ComposantReferentiel.ValidationRule
         {
             ValidationResult validationResult = new ValidationResult(true, null);
             string text = (value ?? string.Empty).ToString();
-            return RegexService.Instance.IsMatchDecimal(this.Entier, this.Decimal, text) ? validationResult : new ValidationResult(false, this.ErrorMessage);
+            // TODO : FINISH TO IMPLEMENT
+            // IF math KO : return new ValidationResult(false, this.ErrorMessage);
+            return validationResult;
         }
     }
 }

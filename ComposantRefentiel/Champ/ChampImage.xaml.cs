@@ -1,4 +1,4 @@
-﻿using ComposantReferentielV2.Converter;
+﻿using ComposantReferentiel.Converter;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;

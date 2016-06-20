@@ -1,9 +1,8 @@
-﻿using ComposantRefentielV2.BLL;
-using ComposantReferentielV2.Champ;
-using ComposantReferentielV2.RapportErreur;
+﻿using ComposantRefentiel.BLL;
+using ComposantReferentiel.Champ;
+using ComposantReferentiel.RapportErreur;
 using MessageBox;
 using ReadAndWrite;
-using Services.BackgrondWorkerService;
 using GeneralServices.Model;
 using GeneralServices.PatternBuilder;
 using GeneralServices.ViewModel;
@@ -22,6 +21,8 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Threading;
 using Microsoft.Win32;
+using ComposantRefentiel.BLL;
+using ComposantReferentiel.RapportErreur;
 
 namespace ComposantReferentiel.ViewModel
 {

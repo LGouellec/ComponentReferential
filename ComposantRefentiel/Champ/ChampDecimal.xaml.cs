@@ -1,6 +1,5 @@
-﻿using ComposantRefentielV2.Converter;
-using ComposantReferentielV2.ValidationRule;
-using Services;
+﻿using ComposantRefentiel.Converter;
+using ComposantReferentiel.ValidationRule;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -91,7 +90,8 @@ namespace ComposantReferentiel.Champ
                 }
 
                 // On check si il correspond bien à un nombre décimal
-                result = (this.textbox.Text.Equals(string.Empty) || RegexService.Instance.IsMatchDecimal(this.Precision, this.Scale, this.textbox.Text));
+                // TODO : FINISH TO IMPLEMENT
+                result = true;
                 return result;
             }
         }

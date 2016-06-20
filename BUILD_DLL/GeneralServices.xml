@@ -1,0 +1,1382 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GeneralServices</name>
+    </assembly>
+    <members>
+        <member name="T:GeneralServices.ChartGraphics.ContentToMarginConverter">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:System.Windows.Data.IValueConverter"/>
+        </member>
+        <member name="M:GeneralServices.ChartGraphics.ContentToMarginConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convertit une valeur.
+            </summary>
+            <param name="value">Valeur produite par la source de liaison.</param>
+            <param name="targetType">Type de la propriété de cible de liaison.</param>
+            <param name="parameter">Paramètre de convertisseur à utiliser.</param>
+            <param name="culture">Culture à utiliser dans le convertisseur.</param>
+            <returns>
+            Une valeur convertie. Si la méthode retourne null, la valeur Null valide est utilisée.
+            </returns>
+        </member>
+        <member name="M:GeneralServices.ChartGraphics.ContentToMarginConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convertit une valeur.
+            </summary>
+            <param name="value">Valeur produite par la cible de liaison.</param>
+            <param name="targetType">Type dans lequel convertir.</param>
+            <param name="parameter">Paramètre de convertisseur à utiliser.</param>
+            <param name="culture">Culture à utiliser dans le convertisseur.</param>
+            <returns>
+            Une valeur convertie. Si la méthode retourne null, la valeur Null valide est utilisée.
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:GeneralServices.ChartGraphics.ContentToPathConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GeneralServices.ChartGraphics.ContentToPathConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convertit une valeur.
+            </summary>
+            <param name="value">Valeur produite par la source de liaison.</param>
+            <param name="targetType">Type de la propriété de cible de liaison.</param>
+            <param name="parameter">Paramètre de convertisseur à utiliser.</param>
+            <param name="culture">Culture à utiliser dans le convertisseur.</param>
+            <returns>
+            Une valeur convertie. Si la méthode retourne null, la valeur Null valide est utilisée.
+            </returns>
+        </member>
+        <member name="M:GeneralServices.ChartGraphics.ContentToPathConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convertit une valeur.
+            </summary>
+            <param name="value">Valeur produite par la cible de liaison.</param>
+            <param name="targetType">Type dans lequel convertir.</param>
+            <param name="parameter">Paramètre de convertisseur à utiliser.</param>
+            <param name="culture">Culture à utiliser dans le convertisseur.</param>
+            <returns>
+            Une valeur convertie. Si la méthode retourne null, la valeur Null valide est utilisée.
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:GeneralServices.Data.StoreApplicationDbContext">
+            <summary>
+            Class Singleton permettant de stocket tous les DbContext utilisés dans les applications utilisant le socle.
+            </summary>
+        </member>
+        <member name="F:GeneralServices.Data.StoreApplicationDbContext.keyValue">
+            <summary>
+            Dictionnaire de valeurs
+            </summary>
+        </member>
+        <member name="F:GeneralServices.Data.StoreApplicationDbContext._instance">
+            <summary>
+            Instance du singleton
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Data.StoreApplicationDbContext.#ctor">
+            <summary>
+            Constructeur privé du singleton
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Data.StoreApplicationDbContext.Register``1(System.String,``0)">
+            <summary>
+            Permet d'enregistrer un nouveau context de base de données. Si la clé est déjà référencée, value n'est pas modifié.
+            </summary>
+            <typeparam name="T">Type de valeur</typeparam>
+            <param name="key">Clé</param>
+            <param name="value">Valeur du DbContext</param>
+        </member>
+        <member name="M:GeneralServices.Data.StoreApplicationDbContext.Get(System.String)">
+            <summary>
+            Retourne le DbContext en fonction de la clé
+            </summary>
+            <param name="key">Clé</param>
+            <returns>Retourne un DbContext</returns>
+        </member>
+        <member name="T:GeneralServices.Data.UnitOfWorkGeneral">
+            <summary>
+            Implémentation du pattern UOW permettant d'annuler et/ou de sauvegarder en base de données des modifications
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Data.UnitOfWorkGeneral.RollBackTotal``1(System.String)">
+            <summary>
+            Rollback général du context en fonction de la clé. Le context doit être créer précédemment.
+            </summary>
+            <typeparam name="T">Type de Bean</typeparam>
+            <param name="key">Clé du context</param>
+        </member>
+        <member name="M:GeneralServices.Data.UnitOfWorkGeneral.RollBackTotal``1(System.Data.Entity.DbContext)">
+            <summary>
+            Rollback général du context en fonction d'un context.
+            </summary>
+            <typeparam name="T">Type de Bean</typeparam>
+            <param name="context">Context</param>
+        </member>
+        <member name="M:GeneralServices.Data.UnitOfWorkGeneral.SaveT``1(System.Data.Entity.DbContext)">
+            <summary>
+            Sauvegarde les modifications du context en base de données.
+            </summary>
+            <typeparam name="T">Type de Bean</typeparam>
+            <param name="context">Context</param>
+        </member>
+        <member name="M:GeneralServices.Data.UnitOfWorkGeneral.SaveT``1(System.String)">
+            <summary>
+            Sauvegarde les modifications du context en base de données.
+            </summary>
+            <typeparam name="T">Type de Bean</typeparam>
+            <param name="key">Clé permettant d'accàder au context</param>
+        </member>
+        <member name="T:GeneralServices.Graphics.LoadingUserControl">
+            <summary>
+            Logique d'interaction pour LoadingUserControl.xaml
+            </summary>
+            <summary>
+            LoadingUserControl
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.LoadingUserControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:GeneralServices.Graphics.SprocketControl">
+            <summary>
+            Interaction logic for SprocketControl.xaml
+            </summary>
+        </member>
+        <member name="F:GeneralServices.Graphics.SprocketControl.IntervalProperty">
+            <summary>
+            Interval Dependency Property
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnIntervalChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Interval property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnIntervalChanged(System.Double,System.Double)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the Interval property.
+            </summary>
+            <param name="oldInterval">Old Value</param>
+            <param name="newInterval">New Value</param>
+        </member>
+        <member name="F:GeneralServices.Graphics.SprocketControl.IsIndeterminateProperty">
+            <summary>
+            IsIndeterminate Dependency Property
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnIsIndeterminateChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the IsIndeterminate property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnIsIndeterminateChanged(System.Boolean,System.Boolean)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the IsIndeterminate property.
+            </summary>
+            <param name="oldIsIndeterminate">Old Value</param>
+            <param name="newIsIndeterminate">New Value</param>
+        </member>
+        <member name="F:GeneralServices.Graphics.SprocketControl.ProgressProperty">
+            <summary>
+            Progress Dependency Property
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.CoerceProgress(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Coerces the Progress value so that it stays in the range 0-100
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="value">New Value</param>
+            <returns>Coerced Value</returns>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnProgressChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Progress property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnProgressChanged(System.Double,System.Double)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the Progress property.
+            </summary>
+            <param name="oldProgress">Old Value</param>
+            <param name="newProgress">New Value</param>
+        </member>
+        <member name="F:GeneralServices.Graphics.SprocketControl.RotationProperty">
+            <summary>
+            Rotation Dependency Property
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnRotationChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the Rotation property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnRotationChanged(GeneralServices.Graphics.SprocketControl.Direction,GeneralServices.Graphics.SprocketControl.Direction)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the Rotation property.
+            </summary>
+            <param name="oldRotation">Old Value</param>
+            <param name="newRotation">New Value</param>
+        </member>
+        <member name="F:GeneralServices.Graphics.SprocketControl.StartAngleProperty">
+            <summary>
+            StartAngle Dependency Property
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnStartAngleChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the StartAngle property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnStartAngleChanged(System.Double,System.Double)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the StartAngle property.
+            </summary>
+            <param name="oldStartAngle">Old Value</param>
+            <param name="newStartAngle">New Value</param>
+        </member>
+        <member name="F:GeneralServices.Graphics.SprocketControl.TickColorProperty">
+            <summary>
+            TickColor Dependency Property
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnTickColorChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the TickColor property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnTickColorChanged(System.Windows.Media.Color,System.Windows.Media.Color)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the TickColor property.
+            </summary>
+            <param name="oldTickColor">Old Value</param>
+            <param name="newTickColor">New Value</param>
+        </member>
+        <member name="F:GeneralServices.Graphics.SprocketControl.TickCountProperty">
+            <summary>
+            TickCount Dependency Property
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.CoerceTickCount(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Coerces the TickCount value to an acceptable value
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="value">New Value</param>
+            <returns>Coerced Value</returns>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnTickCountChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the TickCount property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnTickCountChanged(System.Int32,System.Int32)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the TickCount property.
+            </summary>
+            <param name="oldTickCount">Old Value</param>
+            <param name="newTickCount">New Value</param>
+        </member>
+        <member name="F:GeneralServices.Graphics.SprocketControl.TickStyleProperty">
+            <summary>
+            TickStyle Dependency Property
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnTickStyleChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the TickStyle property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnTickStyleChanged(System.Windows.Media.PenLineCap,System.Windows.Media.PenLineCap)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the TickStyle property.
+            </summary>
+            <param name="oldTickStyle">Old Value</param>
+            <param name="newTickStyle">New Value</param>
+        </member>
+        <member name="F:GeneralServices.Graphics.SprocketControl.TickWidthProperty">
+            <summary>
+            TickWidth Dependency Property
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.CoerceTickWidth(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Coerces the TickWidth value so that it stays above 0.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="value">New Value</param>
+            <returns>Coerced Value</returns>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnTickWidthChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Handles changes to the TickWidth property.
+            </summary>
+            <param name="d">SprocketControl</param>
+            <param name="e">DependencyProperty changed event arguments</param>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnTickWidthChanged(System.Double,System.Double)">
+            <summary>
+            Provides derived classes an opportunity to handle changes to the TickWidth property.
+            </summary>
+            <param name="oldTickWidth">Old Value</param>
+            <param name="newTickWidth">New Value</param>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.#ctor">
+            <summary>
+            Ctor
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.Start">
+            <summary>
+            Start the Tick Control rotation
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.Stop">
+            <summary>
+            Stop the Tick Control rotation
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.ConvertDegreesToRadians(System.Double)">
+            <summary>
+            Converts Degrees to Radians
+            </summary>
+            <param name="degrees">Degrees</param>
+            <returns>Radians</returns>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.CalculateSpokesPoints">
+            <summary>
+            Calculate the Spoke Points and store them
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Graphics.SprocketControl.OnRenderTimerElapsed(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            Handles the Elapsed event of the renderTimer
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">EventArgs</param>
+        </member>
+        <member name="P:GeneralServices.Graphics.SprocketControl.Interval">
+            <summary>
+            Gets or sets the Interval property. This dependency property 
+            indicates duration at which the timer for rotation should fire.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Graphics.SprocketControl.IsIndeterminate">
+            <summary>
+            Gets or sets the IsIndeterminate property. This dependency property 
+            indicates whether the SprocketControl's progress is indeterminate or not.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Graphics.SprocketControl.Progress">
+            <summary>
+            Gets or sets the Progress property. This dependency property 
+            indicates the progress percentage.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Graphics.SprocketControl.Rotation">
+            <summary>
+            Gets or sets the Rotation property. This dependency property 
+            indicates the direction of Rotation of the SprocketControl.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Graphics.SprocketControl.StartAngle">
+            <summary>
+            Gets or sets the StartAngle property. This dependency property 
+            indicates the angle at which the first spoke (with max opacity) is drawn.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Graphics.SprocketControl.TickColor">
+            <summary>
+            Gets or sets the TickColor property. This dependency property 
+            indicates the color of the Spokes in the SprocketControl.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Graphics.SprocketControl.TickCount">
+            <summary>
+            Gets or sets the TickCount property. This dependency property 
+            indicates the number of spokes of the SprocketControl.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Graphics.SprocketControl.TickStyle">
+            <summary>
+            Gets or sets the TickStyle property. This dependency property 
+            indicates the style of the ends of each tick.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Graphics.SprocketControl.TickWidth">
+            <summary>
+            Gets or sets the TickWidth property. This dependency property 
+            indicates the width of each spoke in the SprocketControl.
+            </summary>
+        </member>
+        <member name="T:GeneralServices.Graphics.SprocketControl.Direction">
+            <summary>
+            Defines the Direction of Rotation
+            </summary>
+        </member>
+        <member name="T:GeneralServices.Graphics.SprocketControl.Spoke">
+            <summary>
+            Stores the details of each spoke
+            </summary>
+        </member>
+        <member name="T:GeneralServices.Model.BaseRepository`2">
+            <summary>
+            Classe implémentant l'interface IRepository.
+            Correspond au niveau le plus base de l'implémentation du pattern DAO.
+            Permet d'effectuer des opérations en base de données en retournant des objets DTO utilisable dans l'application.
+            </summary>
+            <typeparam name="T">Classe Bean (Image d'une table de la base)</typeparam>
+            <typeparam name="F">Classe Factory DTO(Permet de construire les DTO en fonction d'une instance de 'T')</typeparam>
+        </member>
+        <member name="T:GeneralServices.Model.IRepository`2">
+            <summary>
+            Interface définissant les méthodes les plus utilisés pour implémenter une couche DAO.
+            </summary>
+            <typeparam name="T">Type du BEAN</typeparam>
+            <typeparam name="TypeDTO">Type du DTO</typeparam>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.First(System.Func{`1,System.Boolean})">
+            <summary>
+            Sélectionne le premier élement correspondant au prédicat
+            </summary>
+            <param name="predicate">Predicat permettant de trouver le premier élément correspondant</param>
+            <returns>Retourne le DTO associé au prédicat</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.All">
+            <summary>
+            Retourne l'ensemble des DTO disponible 
+            </summary>
+            <returns>Retourne une liste DTO</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.Find(System.Object[])">
+            <summary>
+            Permet de trouver le DTO correspondant à la clé primaire passé en paramètres.
+            </summary>
+            <param name="key">Tableau d'objet correspondant à la clé primaire en base de données.</param>
+            <returns>Retourne le DTO associé à la primary key</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.Find(System.Predicate{`1})">
+            <summary>
+            Retourne le premier DTO correspondant au prédicat passé en paramètre
+            </summary>
+            <param name="predicate">Predicat permettant de trouver le premier élément correspondant</param>
+            <returns>Retourne le DTO associé au prédicat</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.Filter(System.Func{`1,System.Boolean})">
+            <summary>
+            Retourne une liste de DTO correspondant au prédicat passé en paramètre
+            </summary>
+            <param name="predicate">Predicat permettant de trouver les éléments correspondant</param>
+            <returns>Retourne une liste de DTO</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.Contains(System.Func{`1,System.Boolean})">
+            <summary>
+            Retourne vrai si un DTO correspond au prédicat passé en paramètre
+            </summary>
+            <param name="predicate">Predicat permettant de trouver les éléments correspondant</param>
+            <returns>Retourne vrai si le prédicat a rencontré des résultats</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.SingleOrDefault(System.Func{`1,System.Boolean})">
+            <summary>
+            Retourne le premier DTO correspondant au prédicat. Si aucun élément ne correspond, renvoit null.
+            </summary>
+            <param name="predicate">Predicat permettant de trouver l'élément correspondant</param>
+            <returns>Retourne le DTo si il est trouvé, null sinon</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.Update(`1,System.Boolean)">
+            <summary>
+            Permet de mettre à jour un DTO. Si commit est à true, les données sont persistées en base de données
+            </summary>
+            <param name="entity">Entité à mettre à jour</param>
+            <param name="commit">Commit en base si la valeur est vrai</param>
+            <returns>Renvoit le BEAN modifié</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.Delete(`1,System.Boolean)">
+            <summary>
+            Permet de supprimer un DTO. Si commit est à true, les données sont persistées en base de données
+            </summary>
+            <param name="entity">Entité à supprimer</param>
+            <param name="commit">Commit en base si la valeur est vrai</param>
+            <returns>Renvoit le nombre d'élement supprimé</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.Delete(System.Func{`1,System.Boolean},System.Boolean)">
+            <summary>
+            Permet de supprimer des DTO. Si commit est à true, les données sont persistées en base de données
+            </summary>
+            <param name="predicate">Prédicat permettant de trouver tous les éléments à supprimer</param>
+            <param name="commit">Commit en base si la valeur est vrai</param>
+            <returns>Renvoit le nombre d'élement supprimé</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.Insert(`1,System.Boolean)">
+            <summary>
+            Permet d'insérer un nouveau DTO. Si commit est à true, les données sont persistées en base de données
+            </summary>
+            <param name="entity">Entité à inséré</param>
+            <param name="commit">Commit en base si la valeur est vrai</param>
+            <returns>Retourne le BEAN précédement créé</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.Save(`1,System.Boolean)">
+            <summary>
+            Permet de sauvegarder les modifications d'un DTO en base de données.
+            </summary>
+            <param name="t">Entité à mettre à jour en BDD</param>
+            <param name="commit">Commit en base si la valeur est vrai</param>
+            <returns>Retourne le BEAN qui a été modifié</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.Refresh(`1)">
+            <summary>
+            Permet d'effacer les modifications dans le context de ce DTO.
+            </summary>
+            <param name="TObject">DTO à remettre à zéro.</param>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.RollBack(`1)">
+            <summary>
+            Permet de faire un rollback de l'entité DTO
+            </summary>
+            <param name="entity">DTO à remettre à zéro.</param>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.CreateEmpty">
+            <summary>
+            Permet de créer un DTO vide.
+            </summary>
+            <returns>Retourne un DTO vide</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.RollBackAll">
+            <summary>
+            Permet de faire un rollback sur tout le context applicatif.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Model.IRepository`2.FilterParall(System.Func{`1,System.Boolean})">
+            <summary>
+            Retourne une liste de DTO correspondant au prédicat passé en paramètre.
+            Avantage : Cette méthode utilise le parallèlisme des requêtes PLINQ.
+            </summary>
+            <param name="predicate">Predicat permettant de trouver les éléments correspondant</param>
+            <returns>Retourne une liste de DTO</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.#ctor(GeneralServices.Model.AbstractFactoryDTO{`1},System.Data.Entity.DbContext)">
+            <summary>
+            Constructeur complet.
+            </summary>
+            <param name="factory">Factory permettant d'implémenter le pattern Adapter</param>
+            <param name="context">Context de la base de données</param>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.First(System.Func{GeneralServices.Model.IDTO,System.Boolean})">
+            <summary>
+            Sélectionne le premier élement correspondant au prédicat
+            </summary>
+            <param name="predicate">Predicat permettant de trouver le premier élément correspondant</param>
+            <returns>Retourne le DTO associé au prédicat</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.All">
+            <summary>
+            Retourne l'ensemble des DTO disponible 
+            </summary>
+            <returns>Retourne une liste DTO</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.Find(System.Object[])">
+            <summary>
+            Permet de trouver le DTO correspondant à la clé primaire passé en paramètres.
+            </summary>
+            <param name="key">Tableau d'objet correspondant à la clé primaire en base de données.</param>
+            <returns>Retourne le DTO associé à la primary key</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.Find(System.Predicate{GeneralServices.Model.IDTO})">
+            <summary>
+            Retourne le premier DTO correspondant au prédicat passé en paramètre
+            </summary>
+            <param name="predicate">Predicat permettant de trouver le premier élément correspondant</param>
+            <returns>Retourne le DTO associé au prédicat, si aucun DTO ne correspond retourne null.</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.Filter(System.Func{GeneralServices.Model.IDTO,System.Boolean})">
+            <summary>
+            Retourne une liste de DTO correspondant au prédicat passé en paramètre
+            </summary>
+            <param name="predicate">Predicat permettant de trouver les éléments correspondant</param>
+            <returns>Retourne une liste de DTO</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.Contains(System.Func{GeneralServices.Model.IDTO,System.Boolean})">
+            <summary>
+            Retourne vrai si un DTO correspond au prédicat passé en paramètre
+            </summary>
+            <param name="predicate">Predicat permettant de trouver les éléments correspondant</param>
+            <returns>Retourne vrai si le prédicat a rencontré des résultats</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.SingleOrDefault(System.Func{GeneralServices.Model.IDTO,System.Boolean})">
+            <summary>
+            Retourne le premier DTO correspondant au prédicat. Si aucun élément ne correspond, renvoit null.
+            </summary>
+            <param name="predicate">Predicat permettant de trouver l'élément correspondant</param>
+            <returns>Retourne le DTo si il est trouvé, null sinon</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.Update(GeneralServices.Model.IDTO,System.Boolean)">
+            <summary>
+            Permet de mettre à jour un DTO. Si commit est à true, les données sont persistées en base de données
+            </summary>
+            <param name="entity">Entité à mettre à jour</param>
+            <param name="commit">Commit en base si la valeur est vrai</param>
+            <returns>Renvoit le BEAN modifié</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.Delete(GeneralServices.Model.IDTO,System.Boolean)">
+            <summary>
+            Permet de supprimer un DTO. Si commit est à true, les données sont persistées en base de données
+            </summary>
+            <param name="entity">Entité à supprimer</param>
+            <param name="commit">Commit en base si la valeur est vrai</param>
+            <returns>Renvoit le nombre d'élement supprimé</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.Delete(System.Func{GeneralServices.Model.IDTO,System.Boolean},System.Boolean)">
+            <summary>
+            Permet de supprimer des DTO. Si commit est à true, les données sont persistées en base de données
+            </summary>
+            <param name="predicate">Prédicat permettant de trouver tous les éléments à supprimer</param>
+            <param name="commit">Commit en base si la valeur est vrai</param>
+            <returns>Renvoit le nombre d'élement supprimé</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.Insert(GeneralServices.Model.IDTO,System.Boolean)">
+            <summary>
+            Permet d'insérer un nouveau DTO. Si commit est à true, les données sont persistées en base de données
+            </summary>
+            <param name="entity">Entité à inséré</param>
+            <param name="commit">Commit en base si la valeur est vrai</param>
+            <returns>Retourne le BEAN précédement créé</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.Save(GeneralServices.Model.IDTO,System.Boolean)">
+            <summary>
+            Permet de sauvegarder les modifications d'un DTO en base de données.
+            </summary>
+            <param name="t">Entité à mettre à jour en BDD</param>
+            <param name="commit">Permet de commiter en base de données, false par défaut.</param>
+            <returns>Retourne le BEAN qui a été modifié</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.Refresh(GeneralServices.Model.IDTO)">
+            <summary>
+            Permet d'effacer les modifications dans le context de ce DTO.
+            </summary>
+            <param name="TObject">DTO à remettre à zéro.</param>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.RollBack(GeneralServices.Model.IDTO)">
+            <summary>
+            Permet de faire un rollback de l'entité DTO
+            </summary>
+            <param name="entity">DTO à remettre à zéro.</param>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.CreateEmpty">
+            <summary>
+            Permet de créer un DTO vide.
+            </summary>
+            <returns>Retourne un DTO vide</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.RollBackAll">
+            <summary>
+            Permet de faire un rollback sur tout le context applicatif.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.FilterParall(System.Func{GeneralServices.Model.IDTO,System.Boolean})">
+            <summary>
+            Retourne une liste de DTO correspondant au prédicat passé en paramètre.
+            Avantage : Cette méthode utilise le parallèlisme des requêtes PLINQ.
+            </summary>
+            <param name="predicate">Predicat permettant de trouver les éléments correspondant</param>
+            <returns>Retourne une liste de DTO</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.GetElementInBDD(GeneralServices.Model.IDTO)">
+            <summary>
+            Return null if dto not exist
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.MergeObject(System.Object,System.Object)">
+            <summary>
+            Permet de modifier les propriétés de l'objet original par l'objet copy qui a été modifié par l'utilisateur.
+            </summary>
+            <param name="original">Objet original</param>
+            <param name="copy">Objet modifié</param>
+            <returns>Retourne si l'objet a été correctement setter ou  non</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.MergeObjectWithProxies(System.Object,System.Object)">
+            <summary>
+            Merges the object with proxies Entity Framework
+            </summary>
+            <param name="original">The original.</param>
+            <param name="copy">The copy.</param>
+            <returns>Retourne si l'objet a été correctement setter ou  non</returns>
+        </member>
+        <member name="M:GeneralServices.Model.BaseRepository`2.BuildLogCommitError(System.Data.Entity.Validation.DbEntityValidationException)">
+            <summary>
+            Permet de construire une log en fonction d'une exception de validation lors d'un commit du DbContext
+            </summary>
+            <param name="dbEx">Exception lancé</param>
+            <returns>Log générée</returns>
+        </member>
+        <member name="P:GeneralServices.Model.BaseRepository`2.UnitOfWork">
+            <summary>
+            Pattern UnitOfWork permet de committer en base de données que des instances de T.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Model.BaseRepository`2.Factory">
+            <summary>
+            Factory permettant de créer des objets DTO à partir de Bean ou l'inverse.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Model.BaseRepository`2.Data">
+            <summary>
+            Donnés présentes en BDD.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Model.BaseRepository`2.Count">
+            <summary>
+            Taille du DbSet.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Model.BaseRepository`2.ContextBDD">
+            <summary>
+            Retourne le context du modèle.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Model.BaseRepository`2.Log">
+            <summary>
+            Contient la log de la dernière opération effectuée.
+            </summary>
+        </member>
+        <member name="T:GeneralServices.Model.ENTITY_MODEL_STATE">
+            <summary>
+            Enumération qui permet de savoir si ce BEAN doit être persisté en base de données ou non.
+            </summary>
+        </member>
+        <member name="F:GeneralServices.Model.ENTITY_MODEL_STATE.PERSIST">
+            <summary>
+            BEAN qui va être persisté en BDD
+            </summary>
+        </member>
+        <member name="F:GeneralServices.Model.ENTITY_MODEL_STATE.NOT_PERSIST">
+            <summary>
+            BEAN qui ne va pas être persisté en BDD
+            </summary>
+        </member>
+        <member name="T:GeneralServices.Model.EntityModel">
+            <summary>
+            Classe abstraites qui doit être implémenté par tous les classes BEAN.
+            Cette classe définit une méthode permettant de récupérer la clé primaire des objets BEAN.
+            </summary>
+        </member>
+        <member name="F:GeneralServices.Model.EntityModel.STATE">
+            <summary>
+            Etat de pesistance du BEAN.
+            Par défaut : ENTITY_MODEL_STATE.PERSIST
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Model.EntityModel.GetPrimaryKey">
+            <summary>
+            Doit retourner un tableau d'objet définissant la clé primaire du BEAN
+            </summary>
+            <returns>Retourne un tableau d'objet définissant la clé primaire du BEANd'o</returns>
+        </member>
+        <member name="T:GeneralServices.Model.IDTO">
+            <summary>
+            Interface devant être implémenté par les classes manipulables par l'application.
+            Permet de ne pas manipuler les objets liés à la base de données directement.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Model.IDTO.GetObject``1(System.Object)">
+            <summary>
+            Permet de récupérer la propriété d'un DTO en fonction d'un paramètre.
+            Cette méthode n'est pas obligatoire à implémenter.
+            </summary>
+            <typeparam name="T">Type du paramètre</typeparam>
+            <param name="param">Paramètre permettant de récupérer la propriété.</param>
+            <returns>Retourne la valeur de la propriété de ce DTO</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IDTO.SetObject``1(``0,System.Object)">
+            <summary>
+            Permet de setter une propriété d'un DTO en fonction d'un paramètre.
+            Cette méthode n'est pas obligatoire à implémenter.
+            </summary>
+            <typeparam name="T">Type du paramètre</typeparam>
+            <param name="t">Nouvelle valeur à setter à ce DTO</param>
+            <param name="param">Paramètre permettant de récupérer la propriété.</param>
+        </member>
+        <member name="T:GeneralServices.Model.AbstractFactoryDTO`1">
+            <summary>
+            Factory permettant de créer des objets Bean à partir de DTO ou l'inverse.
+            Cette classe implémente le pattern Singleton.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Model.AbstractFactoryDTO`1.#ctor">
+            <summary>
+            Constructeur vide.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Model.AbstractFactoryDTO`1.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Constructeur avec les factory étrangères.
+            </summary>
+            <param name="dico">Dictionnaire de factory étrangères associés par clé.</param>
+        </member>
+        <member name="M:GeneralServices.Model.AbstractFactoryDTO`1.CreateDTO(System.Object)">
+            <summary>
+            Permet de créer un DTO à partir d'un BEAN.
+            </summary>
+            <param name="o">Bean à transformer en DTO</param>
+            <returns>Retourne le DTO correctement créer</returns>
+        </member>
+        <member name="M:GeneralServices.Model.AbstractFactoryDTO`1.CreateBean(GeneralServices.Model.IDTO)">
+            <summary>
+            Permet de créer un BEAN à partir d'un DTO
+            </summary>
+            <param name="dto">DTO à reconvertir en objet BEAN</param>
+            <returns>Retourne le BEAN associé à ce DTO</returns>
+        </member>
+        <member name="M:GeneralServices.Model.AbstractFactoryDTO`1.FillForeignFactory">
+            <summary>
+            Est appelé lorsque le singleton est instancié.
+            Cette méthode permet au développeur d'ajouter de manière automatique toutes les factorys étrangères que cette dernière a besoin.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Model.AbstractFactoryDTO`1.CreateDTO(System.Object,GeneralServices.Model.IDTO)">
+            <summary>
+            Permet de créer un DTO à partir d'un BEAN.
+            Si cette méthode n'est pas surchargé, elle appelle la méthode abstraite CreateDTO sans se préoccupé de 'source'.
+            </summary>
+            <param name="o">Bean à transformer en DTO</param>
+            <param name="source">DTO parent du DTO qui va être retourné</param>
+            <returns>Retourne le DTO correctement créer</returns>
+        </member>
+        <member name="M:GeneralServices.Model.AbstractFactoryDTO`1.CreateBean(GeneralServices.Model.IDTO,GeneralServices.Model.EntityModel)">
+            <summary>
+            Permet de créer un BEAN à partir d'un DTO. 
+            Si cette méthode n'est pas surchargé, elle appelle la méthode abstraite CreateBean sans se préoccupé de 'source'.
+            </summary>
+            <param name="dto">DTO à reconvertir en objet BEAN</param>
+            <param name="source">BEAN parent du BEAN qui va être retourné</param>
+            <returns>Retourne le BEAN associé à ce DTO</returns>
+        </member>
+        <member name="M:GeneralServices.Model.AbstractFactoryDTO`1.CreateListDTO(System.Collections.Generic.List{System.Object})">
+            <summary>
+            Créer une liste de DTO à partir d'une liste de BEAN
+            </summary>
+            <param name="os">Liste d'objet BEAN</param>
+            <returns>Retourne la liste de DTO</returns>
+        </member>
+        <member name="M:GeneralServices.Model.AbstractFactoryDTO`1.CreateListBean(System.Collections.Generic.List{GeneralServices.Model.IDTO})">
+            <summary>
+            Créer une liste de BEAN à partir d'une liste de DTO
+            </summary>
+            <param name="dtos">Liste de DTO à reconvertir en objet BEAN</param>
+            <returns>Retourne la liste de BEAN associé à ces DTOs</returns>
+        </member>
+        <member name="M:GeneralServices.Model.AbstractFactoryDTO`1.CreateListDTO(System.Collections.Generic.List{System.Object},GeneralServices.Model.IDTO)">
+            <summary>
+            Créer une liste de DTO à partir d'une liste de BEAN
+            </summary>
+            <param name="os">Liste d'objet BEAN</param>
+            <param name="source">DTO source de chaque entité retournée dans la liste</param>
+            <returns>Retourne la liste de DTO</returns>
+        </member>
+        <member name="M:GeneralServices.Model.AbstractFactoryDTO`1.CreateListBean(System.Collections.Generic.List{GeneralServices.Model.IDTO},GeneralServices.Model.EntityModel)">
+            <summary>
+            Créer une liste de BEAN à partir d'une liste de DTO
+            </summary>
+            <param name="dtos">Liste de DTO à reconvertir en objet BEAN</param>
+            <param name="source">BEAN parent de chaque entité retournée dans la liste</param>
+            <returns>Retourne la liste de BEAN associé à ces DTOs</returns>
+        </member>
+        <member name="P:GeneralServices.Model.AbstractFactoryDTO`1.ForeignFactory">
+            <summary>
+            Factory étrangères pour construites les objets en relation avec d'autres objets.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.Model.AbstractFactoryDTO`1.Instance">
+            <summary>
+            Singleton de la classe T passé en paramètres de la classe
+            </summary>
+        </member>
+        <member name="T:GeneralServices.Model.IUnitOfWork`1">
+            <summary>
+            Interface UnitOfWork permettant de commiter les modifications en base
+            </summary>
+            <typeparam name="T">Type du BEAN</typeparam>
+        </member>
+        <member name="M:GeneralServices.Model.IUnitOfWork`1.Commit">
+            <summary>
+            Commit les modifications du context en base de données.
+            </summary>
+            <returns>Retourne le nombre de lignes modifiées</returns>
+        </member>
+        <member name="M:GeneralServices.Model.IUnitOfWork`1.RollBackAll">
+            <summary>
+            Annule les modifications présent dans le context.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Model.IUnitOfWork`1.RollBack(`0)">
+            <summary>
+            Annule les modifications présent dans le context pour un BEAN précis.
+            </summary>
+            <param name="entity">BEAN où le rollback va être effectuée</param>
+        </member>
+        <member name="T:GeneralServices.Model.UnitOfWork`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:GeneralServices.Model.UnitOfWork`1.#ctor(System.Data.Entity.DbContext)">
+            <summary>
+            Consrtucteur complet
+            </summary>
+            <param name="context">Context de base de données</param>
+        </member>
+        <member name="M:GeneralServices.Model.UnitOfWork`1.System#IDisposable#Dispose">
+            <summary>
+            Implémentation de l'interface IDisposable. 
+            Fermer la connexion à la base de données. 
+            Remet à null, le context de base de données.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.Model.UnitOfWork`1.Commit">
+            <summary>
+            Commit les modifications du context en base de données.
+            </summary>
+            <returns>Retourne le nombre de lignes modifiées</returns>
+        </member>
+        <member name="M:GeneralServices.Model.UnitOfWork`1.RollBackAll">
+            <summary>
+            Annule les modifications présent dans le context.
+            </summary>
+        </member>
+        <!-- Commentaire XML incorrect ignoré pour le membre "M:GeneralServices.Model.UnitOfWork`1.RollBack(`0)" -->
+        <member name="P:GeneralServices.Model.UnitOfWork`1.Db">
+            <summary>
+            Context de base de données.
+            </summary>
+        </member>
+        <member name="T:GeneralServices.PatternCommand.AbstractCommand">
+            <summary>
+            Implémentation du pattern Command.
+            Classe Abstraite représentant une command possédant des arguments.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.PatternCommand.AbstractCommand.#ctor(GeneralServices.PatternCommand.IReceiver,GeneralServices.PatternCommand.AbstractCommandArgs)">
+            <summary>
+            Constructeur complet
+            </summary>
+            <param name="receiver">Recepteur de la commande</param>
+            <param name="args">Arguments de la commande</param>
+        </member>
+        <member name="M:GeneralServices.PatternCommand.AbstractCommand.Execute">
+            <summary>
+            Execute l'action associé à cette commande.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.PatternCommand.AbstractCommand.UnExecute">
+            <summary>
+            Execute l'opposé de l'action associé à cette commande.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.PatternCommand.AbstractCommand.Undo">
+            <summary>
+            Permet de créer une commande effectué l'opposé de cette commande.
+            </summary>
+            <returns>Retourne une nouvelle commande</returns>
+        </member>
+        <member name="P:GeneralServices.PatternCommand.AbstractCommand.Arguments">
+            <summary>
+            Arguments de la commande
+            </summary>
+        </member>
+        <member name="P:GeneralServices.PatternCommand.AbstractCommand.Receiver">
+            <summary>
+            Récepteur de la commande
+            </summary>
+        </member>
+        <member name="T:GeneralServices.PatternCommand.AbstractInvoker">
+            <summary>
+            Implémentation du pattern Command.
+            Classe abstraite représentant celui qui va instancié ces commandes.
+            </summary>
+        </member>
+        <member name="F:GeneralServices.PatternCommand.AbstractInvoker._placement">
+            <summary>
+            Index de la commande courante dans la pile.
+            </summary>
+        </member>
+        <member name="F:GeneralServices.PatternCommand.AbstractInvoker.sizeHisto">
+            <summary>
+            Taille de l'historisation des commandes sauvegardées
+            </summary>
+        </member>
+        <member name="M:GeneralServices.PatternCommand.AbstractInvoker.#ctor(GeneralServices.PatternCommand.IReceiver)">
+            <summary>
+            Constructeur complet
+            </summary>
+            <param name="receiver">Récepteur des commandes</param>
+        </member>
+        <member name="M:GeneralServices.PatternCommand.AbstractInvoker.Action(GeneralServices.PatternCommand.AbstractCommandArgs)">
+            <summary>
+            Effectue l'action en fonction du paramètres.
+            </summary>
+            <param name="_args">Paramètres associés à une commande</param>
+        </member>
+        <member name="M:GeneralServices.PatternCommand.AbstractInvoker.Redo(System.Int32)">
+            <summary>
+            Renouvelle une (ou plusieurs) commande(s) précédement effectuée(s).
+            </summary>
+            <param name="levels">Nombre d'itération à effectuer</param>
+        </member>
+        <member name="M:GeneralServices.PatternCommand.AbstractInvoker.Undo(System.Int32)">
+            <summary>
+            Effectue un rollback sur une (ou plusieurs) commande(s) précédement effectuée(s).
+            </summary>
+            <param name="levels">Nombre d'itération à effectuer</param>
+        </member>
+        <member name="M:GeneralServices.PatternCommand.AbstractInvoker.AddCommand(GeneralServices.PatternCommand.AbstractCommand)">
+            <summary>
+            Ajoute une commande dans la backlog.
+            Cette méthode permet aussi d'archiver les anciens commandes trop vieilles.
+            </summary>
+            <param name="command">Commande qui vient d'être éxecuter.</param>
+        </member>
+        <member name="P:GeneralServices.PatternCommand.AbstractInvoker.Commands">
+            <summary>
+            Liste des commandes
+            </summary>
+        </member>
+        <member name="P:GeneralServices.PatternCommand.AbstractInvoker.Receiver">
+            <summary>
+            Récepteur des commandes
+            </summary>
+        </member>
+        <member name="T:GeneralServices.PatternCommand.AbstractCommandArgs">
+            <summary>
+            Implémentation du pattern Command.
+            Classe Abstraite représentant les arguments d'une commande.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.PatternCommand.AbstractCommandArgs.Fill(System.Object[])">
+            <summary>
+            Permet de remplir et d'organiser les paramètres de la commande
+            </summary>
+            <param name="_params">Tableau d'objet représentant les paramètres à envoyés à cette commande.</param>
+        </member>
+        <member name="T:GeneralServices.PatternCommand.IReceiver">
+            <summary>
+            Implémentation du pattern Command.
+            Interface permettant d'implémenter l'éxécution d'une action.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.PatternCommand.IReceiver.Action(GeneralServices.PatternCommand.AbstractCommand)">
+            <summary>
+            Action à effectuer lorsque le récepteur reçoit une commande.
+            </summary>
+            <param name="command">Commande à éxécuter</param>
+        </member>
+        <member name="T:GeneralServices.ViewModel.ActionVMArgs">
+            <summary>
+            Arguments lors de l'ouverture et la fermeture de fenêtre dans la Generic Application.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.ViewModel.ActionVMArgs.Control">
+            <summary>
+            UserControl 
+            </summary>
+        </member>
+        <member name="P:GeneralServices.ViewModel.ActionVMArgs.Title">
+            <summary>
+            Titre de la fenêtre
+            </summary>
+        </member>
+        <member name="P:GeneralServices.ViewModel.ActionVMArgs.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:GeneralServices.ViewModel.ActionVMArgs.Icon">
+            <summary>
+            Icone présente dans la barre de titre
+            </summary>
+        </member>
+        <member name="T:GeneralServices.BtnIcon">
+            <summary>
+            Logique d'interaction pour BtnIcon.xaml
+            </summary>
+            <summary>
+            BtnIcon
+            </summary>
+        </member>
+        <member name="M:GeneralServices.BtnIcon.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:GeneralServices.ModernButton">
+            <summary>
+            Logique d'interaction pour ModernButton.xaml
+            </summary>
+            <summary>
+            ModernButton
+            </summary>
+        </member>
+        <member name="M:GeneralServices.ModernButton.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:GeneralServices.ModernButton.SourceImg">
+            <summary>
+            Image Source du boutton.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.ModernButton.ColorMouseEnter">
+            <summary>
+            Couleur du background du boutton lors que le curseur survole le boutton.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.ModernButton.Title">
+            <summary>
+            Libellé du boutton
+            </summary>
+        </member>
+        <member name="P:GeneralServices.ModernButton.TextColor">
+            <summary>
+            Couleur du texte du boutton.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.ModernButton.CommandParameter">
+            <summary>
+            Paramètres de la commande qui est lancé lorsque l'utilisateur clique sur le boutton.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.ModernButton.Command">
+            <summary>
+            Action à réaliser lorsque l'utilisateur clique sur le boutton.
+            </summary>
+        </member>
+        <member name="P:GeneralServices.ModernButton.Background">
+            <summary>
+            Couleur de fond du boutton
+            </summary>
+        </member>
+        <member name="T:GeneralServices.PatternBuilder.IBuilder">
+            <summary>
+            Interface exposant des méthodes permettant de construire une classe permettant de construire une liste de IBuilt
+            </summary>
+        </member>
+        <member name="M:GeneralServices.PatternBuilder.IBuilder.BuildPart(System.Object)">
+            <summary>
+            Construit l'arborescence souhaité en ayant un paramètre de build
+            </summary>
+            <param name="build">Paramètres</param>
+        </member>
+        <member name="M:GeneralServices.PatternBuilder.IBuilder.GetResult">
+            <summary>
+            Obtient le résultat de la création
+            </summary>
+            <returns>Obtient le résultat de la création</returns>
+        </member>
+        <member name="M:GeneralServices.ViewModel.FindParentControl.FindParent``1(System.Windows.DependencyObject)">
+            <summary>
+            Permet de retrouver le contrôle parent d'un objet enfant.
+            </summary>
+            <typeparam name="T">Type de contrôle à retrouver.</typeparam>
+            <param name="child">Controle enfant.</param>
+            <returns>Retourne le premier parent du type T.</returns>
+        </member>
+        <member name="T:GeneralServices.ViewModel.RelayCommand">
+            <summary>
+            A command whose sole purpose is to relay its functionality to other
+            objects by invoking delegates. The default return value for the CanExecute
+            method is 'true'.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.ViewModel.RelayCommand.#ctor(System.Action{System.Object})">
+            <summary>
+            Initializes a new instance of the RelayCommand class
+            </summary>
+            <param name="execute">The execution logic.</param>
+        </member>
+        <member name="M:GeneralServices.ViewModel.RelayCommand.#ctor(System.Action{System.Object},System.Func{System.Object,System.Boolean})">
+            <summary>
+            Initializes a new instance of the RelayCommand class
+            </summary>
+            <param name="execute">The execution logic.</param>
+            <param name="canExecute">The execution status logic.</param>
+        </member>
+        <member name="T:GeneralServices.ViewModel.ServicesSingle">
+            <summary>
+            Classe permettant de stocker tous les view models de l'application au démarrage de celle-ci.
+            A utiliser que lors que les VM doivent être uniques
+            </summary>
+        </member>
+        <member name="F:GeneralServices.ViewModel.ServicesSingle._instance">
+            <summary>
+            Singleton de la classe ServicesSingle
+            </summary>
+        </member>
+        <member name="F:GeneralServices.ViewModel.ServicesSingle.data">
+            <summary>
+            Liste de données présentes dans le singleton
+            </summary>
+        </member>
+        <member name="M:GeneralServices.ViewModel.ServicesSingle.#ctor">
+            <summary>
+            Constructeur vide
+            </summary>
+        </member>
+        <member name="M:GeneralServices.ViewModel.ServicesSingle.Register``1">
+            <summary>
+            Permet d'enregistrer un type de classe dans le service.
+            Un constructeur vide doit être présent dans la classe T.
+            </summary>
+            <typeparam name="T">Type de la classe à enregistrer.</typeparam>
+        </member>
+        <member name="M:GeneralServices.ViewModel.ServicesSingle.Get``1">
+            <summary>
+            Permet de récupérer l'instance de la classe T précédement enregistrer.
+            Si T n'est pas présent, return null.
+            </summary>
+            <typeparam name="T">Type de la classe de l'instance recherchée</typeparam>
+            <returns>Retourne une instance de la classe T si elle est présente, sinon null.</returns>
+        </member>
+        <member name="T:GeneralServices.ViewModel.ViewModelBase">
+            <summary>
+            Base class for all ViewModel classes in the application. Provides support for 
+            property changes notification.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.ViewModel.ViewModelBase.VerifyPropertyName(System.String)">
+            <summary>
+            Warns the developer if this object does not have a public property with
+            the specified name. This method does not exist in a Release build.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.ViewModel.ViewModelBase.OnPropertyChanged(System.String)">
+            <summary>
+            Raises this object's PropertyChanged event.
+            </summary>
+            <param name="propertyName">The name of the property that has a new value.</param>
+        </member>
+        <member name="M:GeneralServices.ViewModel.ViewModelBase.RaisePropertyChanged``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            Permet de notifier les observeurs d'une propriété grâce à une lambda expression.
+            </summary>
+        </member>
+        <member name="M:GeneralServices.ViewModel.ViewModelBase.OnActionVM(GeneralServices.ViewModel.ActionVMArgs)">
+            <summary>
+            Raises this object's PropertyChanged event.
+            </summary>
+            <param name="action">Action done</param>
+        </member>
+        <member name="M:GeneralServices.ViewModel.ViewModelBase.OnActionVMClosed(GeneralServices.ViewModel.ActionVMArgs)">
+            <summary>
+            Raises this object's PropertyChanged event.
+            </summary>
+            <param name="action">Action done</param>
+        </member>
+        <member name="M:GeneralServices.ViewModel.ViewModelBase.OnActionVmLoaded(System.Object)">
+            <summary>
+            Raises this object's ActionLoaded event.
+            </summary>
+            <param name="_params">Parameters</param>
+        </member>
+        <member name="M:GeneralServices.ViewModel.ViewModelBase.CloseAction">
+            <summary>
+            Ferme le view model. 
+            Permet de vider les objets présents dans la couche de présentation logique.
+            </summary>
+        </member>
+        <member name="E:GeneralServices.ViewModel.ViewModelBase.PropertyChanged">
+            <summary>
+            Raised when a property on this object has a new value.
+            </summary>
+        </member>
+        <member name="E:GeneralServices.ViewModel.ViewModelBase.ActionVM">
+            <summary>
+            Evenement lié au delegate ActionVMLaunched
+            </summary>
+        </member>
+        <member name="E:GeneralServices.ViewModel.ViewModelBase.ActionVMClose">
+            <summary>
+            Evenement lié au delegate ActionVMClosed
+            </summary>
+        </member>
+        <!-- Commentaire XML incorrect ignoré pour le membre "E:GeneralServices.ViewModel.ViewModelBase.ActionLoaded" -->
+        <member name="T:GeneralServices.ViewModel.ViewModelBase.ActionVMLaunched">
+            <summary>
+            Levé quand une action du type ouverture fenêtre à été lancé (typiquement : Ouverture d'une nouvelle fenêtre grâce à un UserControl
+            </summary>
+            <param name="sender">Objet émetteur</param>
+            <param name="action">Arguments de l'action</param>
+        </member>
+        <member name="T:GeneralServices.ViewModel.ViewModelBase.ActionVMClosed">
+            <summary>
+            Levé quand une action du type fermeture de la fenêtre lancé (typiquement : Fermeture d'une nouvelle fenêtre)
+            </summary>
+            <param name="sender">Objet émetteur</param>
+            <param name="action">Arguments de l'action</param>
+        </member>
+        <member name="T:GeneralServices.ViewModel.ViewModelBase.ActionVMLoaded">
+            <summary>
+            Levé quand l'écran associé à ce view model est affiché.
+            Permet d'initialiser le view model et donc la vue par le data-binding.
+            </summary>
+            <param name="sender">Objet émetteur</param>
+            <param name="parameters">Arguments de l'action</param>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

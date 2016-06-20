@@ -1,6 +1,6 @@
-﻿using ComposantReferentielV2.Champ;
-using ComposantReferentielV2.Converter;
-using ComposantReferentielV2.ViewModel;
+﻿using ComposantReferentiel.Champ;
+using ComposantReferentiel.Converter;
+using ComposantReferentiel.ViewModel;
 using GeneralServices.Model;
 using GeneralServices.ViewModel;
 using System;

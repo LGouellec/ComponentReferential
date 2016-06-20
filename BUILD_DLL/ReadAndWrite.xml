@@ -1,0 +1,1161 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReadAndWrite</name>
+    </assembly>
+    <members>
+        <member name="T:ReadAndWrite.Excel">
+            <summary>
+            Permet de gerer un classeur Excel
+            </summary>
+        </member>
+        <member name="T:ReadAndWrite.ReadAndWrite">
+            <summary>
+            Cette classe permet de lire et d'écrire dans un fichier un texte.
+            Elle représente donc une stratégie d'écriture et de lecture. 
+            Ce design pattern est le pattern Strategy qui permet d'etre modulaire, et facilement évoluable.
+            </summary>
+        </member>
+        <member name="F:ReadAndWrite.ReadAndWrite.encoding">
+            <summary>
+            Encoding Read/Write
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWrite.#ctor">
+            <summary>
+            Constructeur sans paramètres
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWrite.#ctor(System.String)">
+            <summary>
+            Constructeur avec paramètre
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWrite.Read">
+            <summary>
+            Permet de lire l'intégralité du fichier spécifié par Path 
+            et retourne donc une String contenant l'ensemble des données texte.
+            </summary>
+            <returns>Retourne tout le contenu du fichier texte.</returns>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWrite.ReadLines">
+            <summary>
+            Permet de lire l'intégralité du fichier spécifié par Path 
+            et retourne un tableau de lignes du fihcier.
+            </summary>
+            <returns>Retourne un tableau de string représentant le tableau des lignes dans le fichier</returns>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWrite.Write(System.String)">
+            <summary>
+            Permet d'écrire du contenu dans un fichier. 
+            Si le fichier existe déjà, le contenu existant sera effacé 
+            et remplacer par le nouveau.
+            </summary>
+            <param name="texte">Contenu à écrire dans le fichier</param>
+            <returns>Retourne un booléen qui permet de savoir si l'écriture a bien été effectué.</returns>
+        </member>
+        <member name="P:ReadAndWrite.ReadAndWrite.Path">
+            <summary>
+            Chemin du fichier (Accessible en lecture et écriture).
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.Excel.#ctor">
+            <summary>
+            Contructeur : Creer un objet Excel
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.Excel.Ouvrir(System.String)">
+            <summary>
+            Ouverture du fichier selon le chemin passé en paramètre
+            </summary>
+            <param name="Path">Chemin du fichier</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.Ouvrir">
+            <summary>
+            Ouverture du fichier vide
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.ImportCSV(System.String,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32[])">
+            <summary>
+            Importation d'un fichier CSV dans un fichier Excel
+            </summary>
+            <param name="importFileName">Nom du fichier CSV</param>
+            <param name="ligneDebut"></param>
+            <param name="ligneFin"></param>
+            <param name="colonneDebut"></param>
+            <param name="colonneFin"></param>
+        </member>
+        <member name="M:ReadAndWrite.Excel.LectureSeule(System.Boolean,System.String)">
+            <summary>
+            Met le fichier en lecture seule
+            </summary>
+            <param name="value"></param>
+            <param name="FullPathName"></param>
+        </member>
+        <member name="M:ReadAndWrite.Excel.LectureSeule(System.Boolean)">
+            <summary>
+            Met le fichier en lecture seule
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:ReadAndWrite.Excel.AfficherExcel">
+            <summary>
+            Rend l'application Excel visible
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.CacherExcel">
+            <summary>
+            Rend l'application Excel invisible
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.GelerExcel">
+            <summary>
+            Gèle l'application Excel
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.DeGelerExcel">
+            <summary>
+            Dégèle l'application Excel
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.DesactiverAlerts">
+            <summary>
+            Désactive les aletes
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.ActiverAlerts">
+            <summary>
+            Active les alertes
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.Fermer">
+            <summary>
+            Ferme le fichier
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.Fermer(System.String)">
+            <summary>
+            Ferme le fichier indiqué
+            </summary>
+            <param name="name">fichier à fermer.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.Quitter">
+            <summary>
+            Quitte l'application Excel
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.Enregistrer">
+            <summary>
+            Enregistre le fichier
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.Enregistrer(System.String)">
+            <summary>
+            Enregistre suivant le chemin indiqué
+            </summary>
+            <param name="Path">Chemin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.EnregistrerHTML(System.String,System.String)">
+            <summary>
+            Enregistre le fichier sous forme HTML
+            </summary>
+            <param name="Path">Chemin.</param>
+            <param name="fileName">Nom du fichier.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.Imprimer">
+            <summary>
+            Ouvre la boîte de dialogue pour l'impression
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.ImprimerDirect">
+            <summary>
+            Imprime directement sur l'imprimante par défaut
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.ImprimerSurListeImprimantes(System.Collections.Specialized.StringCollection)">
+            <summary>
+            Imprime sur toutes les imprimantes répertoriées en paramètre (à partir du fichier de configuration)
+            qui sont également présentes sur le poste utilisateur
+            </summary>
+            <param name="listeImprimantes">Liste des imprimantes.</param>
+            <returns>La liste des imprimantes sur lesquelles l'impression a été effectuée</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.CreerUneFeuille">
+            <summary>
+            Crée une nouvelle feuille Excel
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.CreerUneFeuille(System.String)">
+            <summary>
+            Crée une nouvelle feuille 
+            </summary>
+            <param name="libelle">Libellé.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.CreerUneFeuille(System.String,System.String)">
+            <summary>
+            Crée une nouvelle feuille
+            </summary>
+            <param name="name">Nom (code nom).</param>
+            <param name="libelle">Libellé.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.EcrireDansCellule(System.Int64,System.Int64,System.String)">
+            <summary>
+            Ecrit la valeur spéecifiée dans la cellule indiquée
+            </summary>
+            <param name="ligne">Ligne de la cellule.</param>
+            <param name="colonne">Colonne de la cellule.</param>
+            <param name="valeur">Valeur à inscrire.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.EcrireDansCelluleValue(System.Int64,System.Int64,System.String)">
+            <summary>
+            Ecrit la valeur spéecifiée dans la cellule indiquée
+            </summary>
+            <param name="ligne">Ligne de la cellule.</param>
+            <param name="colonne">Colonne de la cellule.</param>
+            <param name="valeur">Valeur à inscrire.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.LireCellule(System.Int64,System.Int64)">
+            <summary>
+            Lit la valeur de la cellule indiquée
+            </summary>
+            <param name="ligne">Ligne de la cellule.</param>
+            <param name="colonne">Colonne de la cellule.</param>
+            <returns>Valeur lue.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.LireCelluleTexte(System.Int64,System.Int64)">
+            <summary>
+            Lit la valeur de la cellule indiquée ( le texte)
+            </summary>
+            <param name="ligne">Ligne de la cellule.</param>
+            <param name="colonne">Colonne de la cellule.</param>
+            <returns>Valeur lue.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.InsererUneLigne(System.String)">
+            <summary>
+            Insère une nouvelle ligne à la ligne indiquée
+            </summary>
+            <param name="ligne">Ligne.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.SupprimerUneLigne(System.String)">
+            <summary>
+            Supprime la ligne indiquée
+            </summary>
+            <param name="ligne">Ligne.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.InsererCelluleDecalerADroite(System.Int64,System.Int64)">
+            <summary>
+            Mise en forme du number format sur une cellule
+            </summary>
+            <param name="ligneDebut"></param>
+            <param name="colonneDebut"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.InsererImage(System.Int64,System.Int64,System.String)">
+            <summary>
+            Insère une image
+            </summary>
+            <param name="ligne">Ligne.</param>
+            <param name="colonne">Colonne.</param>
+            <param name="name">Nom de l'image.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.Filigrane(System.String)">
+            <summary>
+            Ajout le filigrane passé en paramètre
+            </summary>
+            <returns>Vrai si la méthode réussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.AutoFitColonne(System.Int64,System.Int64)">
+            <summary>
+            Ajuste automatiquement les colonnes indiquées
+            </summary>
+            <param name="debut">Première colonne à ajuster.</param>
+            <param name="fin">Dernière colonne à ajuster.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.LargeurMinimum(System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Vérifie si la (le groupe de) colonne(s) possède au moins la largueur indiquée,
+            et affecte proportionnellement la bonne largeur si besoin.
+            </summary>
+            <param name="colDebut">Première colonne.</param>
+            <param name="colFin">Dernière colonne.</param>
+            <param name="largeurMin">Largeur minimale.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.AutoFitLigne(System.Int64)">
+            <summary>
+            Ajuste automatiquement la ligne indiquée
+            </summary>
+            <param name="ligne">Ligne à ajuster.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.NumberFormatCellule(System.Int64,System.Int64,System.String)">
+            <summary>
+            Mise en forme du number format sur une cellule
+            </summary>
+            <param name="ligneDebut"></param>
+            <param name="colonneDebut"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.FusionCellule(System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Fusionne les cellules
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.DeFusionCellule(System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Fusionne les cellules
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.CentrerADroite(System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Centre à droite
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.CentrerAGauche(System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Centre à gauche
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.FormatterCellule(System.Int64,System.Int64,System.Int64,System.Int64,System.String,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Formatter d'une plage de cellule (police,gras,souligner, ....)
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <param name="police"></param>
+            <param name="taille"></param>
+            <param name="gras"></param>
+            <param name="souligner"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.FormatterCellule(System.Int64,System.Int64,System.String,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Formatter une cellule (police,gras,souligner, ....)
+            </summary>
+            <param name="ligne"></param>
+            <param name="colonne"></param>
+            <param name="police"></param>
+            <param name="taille"></param>
+            <param name="gras"></param>
+            <param name="souligner"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.MettreEnGras(System.Int64,System.Int64,System.Int64,System.Int64,System.Boolean)">
+            <summary>
+            Mets en gras une place de cellule
+            </summary>
+            <param name="ligneDebut"></param>
+            <param name="colonneDebut"></param>
+            <param name="ligneFin"></param>
+            <param name="colonneFin"></param>
+            <param name="gras"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.ModifierPolice(System.Int64,System.Int64,System.Int64,System.Int64,System.String,System.Int32)">
+            <summary>
+            Modifie la police d'une plage de cellule
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.ModifierPolice(System.Int64,System.Int64,System.String,System.Int32)">
+            <summary>
+            Modifie la police d'une cellule
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.Centrer(System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Centre
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.CentrerVertiHori(System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Centre verticalement Horizontalement et verticalement
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.EncadrerFin(System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Réalise un encadré fin
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.EncadrerMoyen(System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Réalise un encadré moyen
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.EncadrerGros(System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Réalise un encadré gros
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.CadrillageIntérieurFin(System.Int64,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Réalise un cadrillage intérieur fin
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <!-- Commentaire XML incorrect ignoré pour le membre "M:ReadAndWrite.Excel.SupprTraits(System.Int64,System.Int64,System.Int64,System.Int64)" -->
+        <member name="M:ReadAndWrite.Excel.CouleurCellule(System.Int64,System.Int64,System.Drawing.Color)">
+            <summary>
+            Ajouter une couleur de font dans une cellule
+            </summary>
+            <param name="ligne">Numéro de ligne.</param>
+            <param name="colonne">Numéro de colonne.</param>
+            <param name="couleur">La couleur.</param>
+        </member>
+        <member name="M:ReadAndWrite.Excel.CouleurCellule(System.Int64,System.Int64,System.Int64,System.Int64,System.Drawing.Color)">
+            <summary>
+            Ajouter une couleur de font dans une plage de cellule
+            </summary>
+            <param name="ligneDebut"></param>
+            <param name="colonneDebut"></param>
+            <param name="ligneFin"></param>
+            <param name="colonneFin"></param>
+            <param name="couleur"></param>
+        </member>
+        <member name="M:ReadAndWrite.Excel.GetHPageBreak(System.Int64,System.Int64)">
+            <summary>
+            Fonction qui retourne la liste des HPageBreak
+            </summary>
+            <param name="debut">Ligne début.</param>
+            <param name="fin">Ligne fin.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.SautDePagePresenteEntre(System.Int64,System.Int64)">
+            <summary>
+            Savoir s'il y a un saut de page
+            </summary>
+            <param name="debut">Ligne début.</param>
+            <param name="fin">Ligne fin.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.InsertionSautDePage(System.Int64)">
+            <summary>
+            Insère un saut de page à la ligne indiquée
+            </summary>
+            <param name="ligne">Ligne.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.SuppSautDePageVertical(System.Int32,System.Int32)">
+            <summary>
+            Autofit largeurMax page max en largeur et hauteurMax pages max en hauteur.
+            Plus de zoom afin d'éviter une interprétation différente selon les imprimantes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.DerniereColonneRenseignee">
+            <summary>
+            Retourne le numéro de la dernière colonne possédant 
+            au moins une cellule renseignée (même si les cellules sont fusionnées)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.OrientationPaysage">
+            <summary>
+            Oriente de façon paysage
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.OrientationPortrait">
+            <summary>
+            Oriente de façon portrait
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.OrdreDesPagesDroitePuisBas">
+            <summary>
+            Applique l'ordre des pages d'abord horizontalement, puis verticalement.
+            </summary>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.HauteurLigne(System.Int64,System.Int32)">
+            <summary>
+            Modifie la hauteur de la ligne indiquée
+            </summary>
+            <param name="ligne">Ligne.</param>
+            <param name="hauteur">Hauteur.</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.ColorierFont(System.Int64,System.Int64,System.Int64,System.Int64,System.Drawing.Color)">
+            <summary>
+            Colorier une plage de cellule ( Font )
+            </summary>
+            <param name="ligneDebut">Ligne début.</param>
+            <param name="colonneDebut">Colonne début.</param>
+            <param name="ligneFin">Ligne fin.</param>
+            <param name="colonneFin">Colonne fin.</param>
+            <param name="color">Couleur</param>
+            <returns>Booléen indiquant si tout s'est bien déroulé.</returns>
+        </member>
+        <member name="M:ReadAndWrite.Excel.Finalize">
+            <summary>
+            Detruit l'objet Excel
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.Excel.GetProcessId(System.Diagnostics.Process[],System.Diagnostics.Process[])">
+            <summary>
+            Obtient l'ID du processus
+            </summary>
+            <param name="ExcelProcessesBefore"></param>
+            <param name="ExcelProcessesAfter"></param>
+            <returns>ID</returns>
+        </member>
+        <member name="T:ReadAndWrite.HeaderCSV">
+            <summary>
+            Header d'un fichier CSV
+            </summary>
+        </member>
+        <member name="P:ReadAndWrite.HeaderCSV.Headers">
+            <summary>
+            Liste de chaine de caractères correspondant au titre de chaque colonne
+            </summary>
+        </member>
+        <member name="T:ReadAndWrite.ISerializableCSV">
+            <summary>
+            Cette interface doit etre implémenté par tout objet souhaitant être sérialisé dans un fichier CSV.
+            Elle permet d'exposer les attributs à écrire dans le fichier 
+            mais aussi d'affecter les valeurs d'une ligne du fichier à ces attributs.
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.ISerializableCSV.exposeAttributes">
+            <summary>
+            Cette méthode permet d'exposer les attributs d'un objet qui vont être sérialisé dans le fichier CSV.
+            Il suffit juste de construire une liste des valeurs des attributs et de la retourner.
+            </summary>
+            <returns>Liste des valeurs (attributs) de l'objet</returns>
+        </member>
+        <member name="M:ReadAndWrite.ISerializableCSV.importAttributes(System.String[])">
+            <summary>
+            Cette méthode permet d'initialiser les propriétés d'un objet via un tableau de string.
+            Ce tableau provient d'une ligne du fichier CSV parser via le séparateur.
+            Ainsi il suffit juste d'affecter à l'attribut la valeur de l'objet data[X] en le convertissant en Entier, Boolean, etc ..
+            </summary>
+            <param name="data">Données d'une ligne du fichier.</param>
+            <returns>Retourne un booléan qui permet de savoir si l'importation des données c'est bien passé</returns>
+        </member>
+        <member name="M:ReadAndWrite.ISerializableCSV.exposeHeader(System.String)">
+            <summary>
+            Cette méthode permet de définir les noms des colonnes.
+            </summary>
+            <param name="separateur">Séparateur définit par l'utilisateur.</param>
+            <returns>Retourne un tableau de string définissant les noms des colonnes.</returns>
+        </member>
+        <member name="T:ReadAndWrite.ReadAndWriteCSV">
+            <summary>
+            Cette classe permet de lire un fichier CSV en fonction d'un séparateur 
+            mais aussi d'écrire un fichier CSV selon un format défini.
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWriteCSV.#ctor">
+            <summary>
+            Constructeur sans paramètre
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWriteCSV.#ctor(System.String,System.String)">
+            <summary>
+            Constructeur avec paramètre
+            </summary>
+            <param name="path">Le chemin du fichier</param>
+            <param name="separateur">Le séparateur de ce fichier</param>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWriteCSV.WriteCSV(System.String,System.Collections.Generic.List{ReadAndWrite.ISerializableCSV},System.Boolean,System.Boolean)">
+            <summary>
+            Permet d'écrire dans un fichier CSV l'ensemble des objet passé en paramètre.
+            </summary>
+            <param name="header">Header du fichier</param>
+            <param name="listObject">Liste des objets à capitaliser dans ce fichier CSV</param>
+            <returns>Retourne un booléan permettant de savoir si l'opération s'est bien passée.</returns>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWriteCSV.WriteCSV(System.Collections.Generic.List{ReadAndWrite.ISerializableCSV},System.Boolean,System.Boolean)">
+            <summary>
+            Permet d'écrire dans un fichier CSV l'ensemble des objet passé en paramètre.
+            On utilise le header définit par ISerializableCSV.
+            </summary>>
+            <param name="listObject">Liste des objets à capitaliser dans ce fichier CSV</param>
+            <returns>Retourne un booléan permettant de savoir si l'opération s'est bien passée.</returns>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWriteCSV.ConvertStringToStringCSV(System.Object)">
+            <summary>
+            Fonction statique permettant de convertir un objet en chaine de caractères.
+            Remplace toutes les " par des "", Insére au début et à la fin de la chaine des ".
+            Fait appel à la méthode ToString de l'objet, cette méthode doit donc être défini pour les objets complexes.
+            </summary>
+            <param name="obj">Objet à convertir</param>
+            <returns>Renvoit la chaine de caractère formattée</returns>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWriteCSV.ReadCSV(System.Type)">
+            <summary>
+            Permet de lire un fichier CSV et de retourner l'ensemble des objets en fonction du type passé en paramètre
+            </summary>
+            <param name="type">Type d'objet à retourner, c'est à dire le type d'une classe. Cette classe doit posséder un constructeur vide.</param>
+            <returns>Liste des objets lus dans le fichier. Vide si le fichier n'a pas été trouvé ou si il est vide.</returns>
+        </member>
+        <member name="P:ReadAndWrite.ReadAndWriteCSV.Separateur">
+            <summary>
+            Séparateur utilisé pour séparer les valeurs entre elles dans le fichier (Accessible en lecture et écriture).
+            </summary>
+        </member>
+        <member name="T:ReadAndWrite.ReadAndWriteXML">
+            <summary>
+            Cette classe de service permet de parser un fichier XML 
+            mais aussi d'écrire dans un fichier XML.
+            </summary>
+        </member>
+        <member name="F:ReadAndWrite.ReadAndWriteXML.serializer">
+            <summary>
+            Sérializeur pour lire ou écrire dans un fichier XML
+            </summary>
+        </member>
+        <member name="F:ReadAndWrite.ReadAndWriteXML.type">
+            <summary>
+            Type d'objet à sérialier ou désérialier
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWriteXML.#ctor(System.Type,System.String)">
+            <summary>
+            Constructeur de classe prenant en paramètre le type d'objet du sérializeur (ex : typeof(Window) serait un type)
+            et le chemin du fichier en lecture ou en écriture
+            </summary>
+            <param name="type">Type d'objet</param>
+            <param name="path">Chemin du fichier</param>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWriteXML.Save``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Sauvegarde dans un fichier XML sur le disque dur
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWriteXML.Save``1(``0)">
+            <summary>
+            Sauvegarde dans un fichier XML sur le disque dur
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWriteXML.VerifyType``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Permet de vérifier si la liste passé en argument contient que des objets du type passé au constructeur
+            </summary>
+            <param name="list">Liste d'objet à sérialiser</param>
+            <returns>Retourne si c'est ok ou non</returns>
+        </member>
+        <member name="M:ReadAndWrite.ReadAndWriteXML.Load``1">
+            <summary>
+            Permet de charger un fichier XML et de retourner la liste d'objet.
+            La liste d'objet est templétisé, c'est à dire qu'il faut spécifier à la méthode qu'elle sera le type d'un objet du fichier.
+            Pour désérialiser un élément, il est obligatoire que la classe T possède un constructeur vide sinon le processus échouera.
+            </summary>
+            <typeparam name="T">Template d'un objet, cad la classe d'un élément du fichier</typeparam>
+            <returns>Retourne la liste des objets présents dans le fichier XML</returns>
+        </member>
+        <member name="T:ReadAndWrite.Word">
+            <summary>
+            Permet de gerer un fichier word
+            </summary>
+        </member>
+        <member name="F:ReadAndWrite.Word.app">
+            <summary>
+            Application Word
+            </summary>
+        </member>
+        <member name="F:ReadAndWrite.Word.nvDoc">
+            <summary>
+            Docuement ouvert
+            </summary>
+        </member>
+        <member name="F:ReadAndWrite.Word.fileName">
+            <summary>
+            Nom du document
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.Word.#ctor">
+            <summary>
+            Contructeur : Creer un objet Word
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.Word.Afficher">
+            <summary>
+            Permet d'afficher l'application Word
+            </summary>
+            <returns>La valeur d'affichage</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Cacher">
+            <summary>
+            Permet de cacher l'application Word
+            </summary>
+            <returns>La valeur d'affichage</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Geler">
+            <summary>
+            Fige le refresh de word
+            </summary>
+            <returns>la valeur du refresh</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.DeGeler">
+            <summary>
+            Lance le refresh de word
+            </summary>
+            <returns>la valeur du refresh</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.DesactiverAlerts">
+            <summary>
+            Desactive les messages d'alerte
+            </summary>
+            <returns>Vrai si la methode reussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.ActiverAlerts">
+            <summary>
+            Active les message d'alerte
+            </summary>
+            <returns>Vrai si la methode reussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Quitter">
+            <summary>
+            Ferme l'application word
+            </summary>
+            <returns>Vrai si la methode reussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Quitter(System.Boolean)">
+            <summary>
+            Ferme l'application word
+            </summary>
+            <param name="save">Vrai le document est sauvegarder avant fermeture  </param> 
+            <returns>Vrai si la methode reussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Fermer">
+            <summary>
+            Ferme le document en cours
+            </summary>
+            <returns>Vrai si la méthode réussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Fermer(System.Boolean)">
+            <summary>
+            Ferme le document en cours
+            </summary>
+            <param name="save">Vrai le document est enregistré</param>
+            <returns>Vrai si la méthode réussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Enregistrer">
+            <summary>
+            Enregistre le document ouvert
+            </summary>
+            <returns>Vrai si la méthode réussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Enregistrer(System.String)">
+            <summary>
+            Enregistre Sous
+            </summary>
+            <param name="Path">Le chemin du fichier</param>
+            <returns>Vrai si la méthode réussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Ouvrir(System.String)">
+            <summary>
+            Ouvre le document word en paramétre
+            </summary>
+            <param name="Path">le chemin du document</param>
+            <returns>Vrai si la méthode réussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.OuvrirLectureSeule(System.String)">
+            <summary>
+            Ouvrir le document en lecture seul
+            </summary>
+            <param name="Path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Ouvrir">
+            <summary>
+            Ouvre un docuement vide
+            </summary>
+            <returns>Vrai si la méthode réussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.AllerA(System.String)">
+            <summary>
+            Se déplace sur le signet
+            </summary>
+            <param name="signet">le signet du document</param>
+            <returns>Vrai si la méthode réussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.CreerSignet(System.String)">
+            <summary>
+            Créér un signet
+            </summary>
+            <param name="nomSignet"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.AllerAGoto(System.String)">
+            <summary>
+            Aller à l'étiquette
+            </summary>
+            <param name="signet"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.AllerAFinTableau(Microsoft.Office.Interop.Word.Table)">
+            <summary>
+            Se déplace sur le signet
+            </summary>
+            <param name="tb">le tableau</param>
+            <returns>Vrai si la méthode réussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.AjouterLigne">
+            <summary>
+            Ajoute une ligne blanche dans le document
+            </summary>
+            <returns>Vrai si la methode reussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.DeplacerVersLeBas">
+            <summary>
+            Deplace le curseur sur la ligne de dessous
+            </summary>
+            <returns>Vrai si la methode reussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Redefinir(System.String)">
+            <summary>
+            Redefinie la position d'un signet à l'endroit courant
+            </summary>
+            <param name="signet">le signet du document</param>
+            <returns>Vrai si la méthode réussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Ecrire(System.String)">
+            <summary>
+            Ecrire dans le docuement
+            </summary>
+            <param name="message">le texte a écrire</param>
+            <returns>Vrai si la méthode réussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.ModifierTaille(System.Int32)">
+            <summary>
+            Definit la taille de la police d'écriture
+            </summary>
+            <param name="taille"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.ModifierPolice(System.String)">
+            <summary>
+            Definit la police d'écriture
+            </summary>
+            <param name="nom"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.PoliceGras">
+            <summary>
+            Mise en gras ou non
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.PoliceSouligne">
+            <summary>
+            Mise en souligné ou non
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.IsSouligne">
+            <summary>
+            Retour si élément courant est souligné ou non
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.PoliceItalic">
+            <summary>
+            Mise en Italic ou non
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.DefinirStyle(System.String)">
+            <summary>
+            Permet de changer le style
+            </summary>
+            <param name="nom"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Backspace">
+            <summary>
+            Suppression avec la touche BackSpace
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.FinLigne">
+            <summary>
+            deplacement à la fin de la ligne
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.VersLeBas">
+            <summary>
+            deplacement vers le bas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.CreerTableau">
+            <summary>
+            Création d'un tableau
+            </summary>
+            <returns>le tableau créé</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.CreerTableau(System.Int32,System.Int32)">
+            <summary>
+            Création d'un tableau
+            </summary>
+            <param name="ligne">nombre de ligne du tableau</param>
+            <param name="colonne">nombre de colonne du tableau</param>
+            <returns>le tableau créé</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.CreerTableau(Microsoft.Office.Interop.Word.Range)">
+            <summary>
+            Création d'un tableau
+            </summary>
+            <returns>le tableau créé</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.CreerTableau(Microsoft.Office.Interop.Word.Range,System.Int32,System.Int32)">
+            <summary>
+            Création d'un tableau
+            </summary>
+            <param name="rg">selection</param>
+            <param name="ligne">nombre de ligne du tableau</param>
+            <param name="colonne">nombre de colonne du tableau</param>
+            <returns>Le tableau créé</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.FusionneeCellule(Microsoft.Office.Interop.Word.Table,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Fusionne de plusieurs cellule 
+            </summary>
+            <param name="tb">le tableau</param>
+            <param name="ligneDebut">la ligne de début de selection</param>
+            <param name="colonneDebut">la colonne de début de selection</param>
+            <param name="ligneFin">la ligne de fin de selection</param>
+            <param name="colonneFin">la colonne de fin de selection</param>
+            <returns>Vrai si la methode reussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.AjouterLigne(Microsoft.Office.Interop.Word.Table)">
+            <summary>
+            Ajoute une ligne au tableau
+            </summary>
+            <param name="tb">le tableau</param>
+            <returns>Vrai si la methode reussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.AjouterLigne(Microsoft.Office.Interop.Word.Table,System.Int32)">
+            <summary>
+            Ajoute une ligne au tableau avant la ligne
+            </summary>
+            <param name="tb">le tableau</param>
+            <param name="avantLigne">numero de ligne avant l'insertion</param>
+            <returns>Vrai si la methode reussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.EcrireCellule(Microsoft.Office.Interop.Word.Table,System.Int32,System.Int32,System.String)">
+            <summary>
+            Ecrire un texte dans la cellule
+            </summary>
+            <param name="tb">le tableau</param>
+            <param name="ligne">la ligne</param>
+            <param name="colonne">la colonne</param>
+            <param name="message">le texte</param>
+            <returns>Vrai si la methode reussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.GetTable">
+            <summary>
+            Recupere le tableau en cours
+            </summary>
+            <returns>Le tableau</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.GetCellule(Microsoft.Office.Interop.Word.Table,System.Int32,System.Int32)">
+            <summary>
+            Obtient une cellule
+            </summary>
+            <param name="tb">le tableau</param>
+            <param name="ligne">la ligne</param>
+            <param name="colonne">la colonne</param>
+            <returns>La cellule demandée</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Checked(System.String,System.Boolean)">
+            <summary>
+            Positionne la case à cocher a vrai ou faux
+            </summary>
+            <param name="signet">Le nom de la case à cocher</param>
+            <param name="val">la valeur de la case à cocher</param>
+            <returns>Vrai si la methode reussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Check(System.String)">
+            <summary>
+            Possitionne à vrai la case à cocher
+            </summary>
+            <param name="signet">Le nom de la case à cocher</param>
+            <returns>Vrai si la methode reussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.UnCheck(System.String)">
+            <summary>
+            Possitionne à faux la case à cocher
+            </summary>
+            <param name="signet">Le nom de la case à cocher</param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.ActiverEntetePiedPage">
+            <summary>
+            Passage en modification entete et pied page
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.DesactiverEntetePiedPage">
+             <summary>
+            ¨passage en mode normal
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.ApercuAvantImpression">
+            <summary>
+            Passage en aperçu avant impression
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.ApercuAvantImpression(System.Int32)">
+            <summary>
+            Passage en aperçu avant impression
+            </summary>
+            <param name="nombreCopie" ></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Filigrane(System.String)">
+            <summary>
+            Ajout le filigrane passé en paramètre
+            </summary>
+            <returns>Vrai si la méthode réussi</returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Application_DocumentBeforeClose(Microsoft.Office.Interop.Word.Document,System.Boolean@)">
+            <summary>
+            Réagit à la fermeture d'un document WORD
+            </summary>
+            <param name="Doc"></param>
+            <param name="Cancel"></param>
+        </member>
+        <member name="M:ReadAndWrite.Word.Application_DocumentBeforePrint(Microsoft.Office.Interop.Word.Document,System.Boolean@)">
+            <summary>
+            Réagit à l'impression d'un document word
+            </summary>
+            <param name="Doc"></param>
+            <param name="Cancel"></param>
+        </member>
+        <member name="M:ReadAndWrite.Word.AllerTableau(System.String)">
+            <summary>
+            Atteindre le tableau specifié
+            </summary>
+            <param name="nom"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.PetiteMajuscule">
+            <summary>
+            en petite majuscule
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.CentrerTexte">
+            <summary>
+            Centrer le texte
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.ParagrapheSolidaire(System.String,System.String)">
+            <summary>
+            Paragraphe solidaire
+            </summary>
+            <param name="nomSignetDebut"></param>
+            <param name="nomSignetFin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.nbPageSelection">
+            <summary>
+            Renvoie la page courante de la selection
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReadAndWrite.Word.Finalize">
+            <summary>
+            Detruit l'objet Word
+            </summary>
+        </member>
+        <member name="M:ReadAndWrite.Word.Dispose">
+            <summary>
+            Liberation de l'application word
+            </summary>
+        </member>
+    </members>
+</doc>

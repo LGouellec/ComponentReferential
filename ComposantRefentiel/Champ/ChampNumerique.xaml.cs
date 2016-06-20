@@ -1,4 +1,4 @@
-﻿using ComposantReferentielV2.ValidationRule;
+﻿using ComposantReferentiel.ValidationRule;
 using System;
 using System.Windows;
 using System.Windows.Controls;

@@ -3,7 +3,7 @@
     x:Name="Root" 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:local="clr-namespace:ComposantReferentielV2.Champ">
+    xmlns:local="clr-namespace:ComposantReferentiel.Champ">
     <local:ChampGenerique.Resources />
     <StackPanel>
         <TextBox Name="textbox" Width="{Binding ElementName=Root, Path=MaxWidth}" MaxLength="{Binding ElementName=Root, Path=TailleChamp}"/>

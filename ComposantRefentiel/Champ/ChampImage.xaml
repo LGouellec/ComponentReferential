@@ -3,9 +3,9 @@
     x:Name="Root" 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-    xmlns:local="clr-namespace:ComposantReferentielV2.Champ"
+    xmlns:local="clr-namespace:ComposantReferentiel.Champ"
     xmlns:GeneralServices="clr-namespace:GeneralServices;assembly=GeneralServices"
-    xmlns:vm="clr-namespace:ComposantReferentielV2.Champ.ChampVM">
+    xmlns:vm="clr-namespace:ComposantReferentiel.Champ.ChampVM">
     <local:ChampGenerique.Resources>
         <vm:ChampImageVM x:Key="vm" />
     </local:ChampGenerique.Resources>

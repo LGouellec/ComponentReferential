@@ -1,4 +1,4 @@
-﻿using ComposantRefentielV2.BLL;
+﻿using ComposantRefentiel.BLL;
 using GeneralServices.Model;
 using System.Windows.Controls;
 

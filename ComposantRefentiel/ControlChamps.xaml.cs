@@ -1,4 +1,4 @@
-﻿using ComposantReferentielV2.Champ;
+﻿using ComposantReferentiel.Champ;
 using System;
 using System.Windows;
 using System.Windows.Controls;

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MessageBox</name>
+    </assembly>
+    <members>
+        <member name="T:MessageBox.BoxMessage">
+            <summary>
+            Logique d'interaction pour BoxMessage.xaml
+            </summary>
+            <summary>
+            BoxMessage
+            </summary>
+        </member>
+        <member name="M:MessageBox.BoxMessage.#ctor">
+            <summary>
+            Constructeur vide
+            </summary>
+        </member>
+        <member name="M:MessageBox.BoxMessage.ShowScreen">
+            <summary>
+            Méthode permettant d'affciher la fenetre modale
+            </summary>
+            <returns>Retourne le résultat de la fenêtre</returns>
+        </member>
+        <member name="M:MessageBox.BoxMessage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:MessageBox.BoxMessage.Confirm">
+            <summary>
+            Booléen permettant de savoir sur quel bouton l'utilisateur a cliqué
+            </summary>
+        </member>
+        <member name="T:MessageBox.ShowMessageBox">
+            <summary>
+            Unique point d'entré pour afficher une message box.
+            </summary>
+        </member>
+        <member name="M:MessageBox.ShowMessageBox.Show(MessageBox.TYPE_WINDOW_BOX,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="typeWindow"></param>
+            <param name="title"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MessageBox.TYPE_RESULT_BOX">
+            <summary>
+            Type de résultat de la fenêtre 
+            </summary>
+        </member>
+        <member name="T:MessageBox.TYPE_WINDOW_BOX">
+            <summary>
+            Type de fenêtre
+            </summary>
+        </member>
+    </members>
+</doc>

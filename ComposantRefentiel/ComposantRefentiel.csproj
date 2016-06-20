@@ -35,8 +35,20 @@
     <Reference Include="EntityFramework">
       <HintPath>..\ComposantReferentiel\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="GeneralServices, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BUILD_DLL\GeneralServices.dll</HintPath>
+    </Reference>
+    <Reference Include="MessageBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BUILD_DLL\MessageBox.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="ReadAndWrite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BUILD_DLL\ReadAndWrite.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -175,24 +187,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Close.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MessageBox\MessageBox.csproj">
-      <Project>{ce8a9248-06bd-44a0-80ad-850da5b6a567}</Project>
-      <Name>MessageBox</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ReadAndWrite\ReadAndWrite.csproj">
-      <Project>{de4e3330-eae7-4dcb-b6fe-a69d2443197c}</Project>
-      <Name>ReadAndWrite</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ServicesView\GeneralServices.csproj">
-      <Project>{b6a1dbff-4001-47d8-8a7c-9bebca85da17}</Project>
-      <Name>GeneralServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Services\Services.csproj">
-      <Project>{d0b8eb7a-7658-4244-848d-261159beb110}</Project>
-      <Name>Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\1442866147_import.ico" />
