@@ -1,0 +1,41 @@
+﻿<Window x:Class="SampleComposantRef.Views.SampleComponentRef"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:SampleComposantRef.ViewModels"
+        xmlns:refControl="clr-namespace:ComposantReferentiel;assembly=ComposantRefentielV2"
+        xmlns:champ="clr-namespace:ComposantReferentiel.Champ;assembly=ComposantRefentielV2"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="Sample Composant Referential">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <!--<vm:SampleVM x:Key="vm"/>-->
+                    <vm:SampleVM x:Key="vmSample"/>
+                    
+                    <x:ArrayExtension x:Key="ListExtensionImg" Type="{x:Type sys:String}">
+                        <sys:String>JPG</sys:String>
+                        <sys:String>PNG</sys:String>
+                    </x:ArrayExtension>
+
+                    <champ:Champs x:Key="champs">
+                        <champ:ChampTexte NomChamp="Prénom" NomBDD="FirstName" TailleChamp="25" IsKey="True"/>
+                        <champ:ChampTexte NomChamp="Nom" NomBDD="LastName" TailleChamp="25" IsKey="True"/>
+                        <champ:ChampNumerique NomChamp="Age" NomBDD="Age"  Precision="3"  IsKey="False"/>
+                        <champ:ChampImage NomChamp="Photo Profil" NomBDD="Profil"  ListExtension="{StaticResource ListExtensionImg}"  IsKey="False"/>
+                    </champ:Champs>
+                </ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/GeneralServices;component/ChartGraphics/DictionnaireResourcesConstellium.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+
+    </Window.Resources>
+    <StackPanel>
+        <refControl:ReferentielControl 
+            Name="ref"
+            CollectionChamps="{StaticResource champs}"
+            Observer="{StaticResource vmSample}"
+            WidthGrid="500" HeightGrid="500"/>
+    </StackPanel>
+</Window>
